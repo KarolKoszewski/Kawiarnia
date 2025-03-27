@@ -1,11 +1,13 @@
 package com.example.kawiarnia1
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.RadioGroup
 import android.widget.SeekBar
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -35,6 +37,22 @@ class MainActivity : AppCompatActivity() {
                 R.id.radioLatte -> imageView.setImageResource(R.drawable.latte)
                 else -> {}
             }
+        }
+        button.setOnClickListener {
+            val wybor = when (radioGroup.checkedRadioButtonId) {
+                R.id.radioEspresso -> "Espresso"
+                R.id.radioCappuccino -> "Cappuccino"
+                R.id.radioLatte -> "Latte"
+                else -> "Brak wyboru"
+
+            }
+            val mleko = if (checkBoxMleko.isChecked) "z mlekem" else "bez mleka"
+            val cukier = if (checkBoxCukier.isChecked) "z cukrem" else "bez cukru"
+            val ilosc = seekBar.progress
+
+            val zamowienie = "Wybrano: $wybor, $mleko, $cukier, ilość: $ilosc"
+            Toast.makeText(this, zamowienie, Toast.LENGTH_LONG).show()
+            Log.d("Zamówienie", zamowienie)
         }
     }
 }
