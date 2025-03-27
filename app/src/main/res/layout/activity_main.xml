@@ -8,12 +8,64 @@
     tools:context=".MainActivity"
     android:orientation="vertical"
 
+
     >
 
-    <TextView
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/radioEspresso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Espresso"
+            />
+        <RadioButton
+            android:id="@+id/radioCappuccino"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cappuccino" />
+        <RadioButton
+            android:id="@+id/radioLatte"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Latte" />
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/Obrazek"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/piksell" />
+
+    <CheckBox
+        android:id="@+id/checkBoxMleko"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        />
+        android:text="Mleko" />
+
+    <CheckBox
+        android:id="@+id/checkBoxCukier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cukier" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Wybierz ilość kawy 1 do 10" />
+
+    <SeekBar
+        android:id="@+id/ilosc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="10" />
+
+    <Button
+        android:id="@+id/ZlozZamowienie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Złóż zamówienie" />
 
 </LinearLayout>
